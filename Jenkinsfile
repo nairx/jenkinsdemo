@@ -23,7 +23,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                bat 'copy target\\br26c-jenkins-1.0.jar D:\\hello-world\\hello.jar'
+                bat 'copy target\\jenkinsdemo-1.0.jar D:\\hello-world\\hello.jar'
             }
         }
 
