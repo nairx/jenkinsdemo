@@ -1,33 +1,26 @@
 pipeline {
-
     agent any
-
     tools {
         jdk 'JDK21'
         maven 'Maven3'
     }
-
     stages {
-
         stage('Checkout') {
             steps {
             git branch: 'main',
                 url: 'https://github.com/nairx/jenkinsdemo.git'
     }
         }
-
         stage('Build') {
             steps {
                 bat 'mvn clean package'
             }
         }
-
         stage('Deploy') {
             steps {
                 bat 'copy target\\jenkinsdemo-1.0-SNAPSHOT.jar D:\\hello-world\\hello.jar'
             }
         }
-
         stage('Run Application') {
             steps {
                 bat '''
@@ -36,9 +29,7 @@ pipeline {
                 '''
             }
         }
-
     }
-
 }
 
 
